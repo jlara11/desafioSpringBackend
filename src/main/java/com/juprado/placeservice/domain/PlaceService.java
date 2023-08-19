@@ -1,5 +1,7 @@
 package com.juprado.placeservice.domain;
 
+import com.juprado.placeservice.api.PlaceResponse;
+
 import reactor.core.publisher.Mono;
 
 public class PlaceService{
@@ -9,8 +11,8 @@ public class PlaceService{
 		this.placeRepository = placeRepository;
 	}
 	
-	public Mono<Place> create(Place place){
-		return placeRepository.save(place);
+	public Mono<Place> create(PlaceResponse request){
+		return placeRepository.save(request);
 	}
 	
 }
